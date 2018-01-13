@@ -19,7 +19,7 @@ cd generateAzureIamReport
 In Cloud Shell:
 
 ````
-/bin/sh generateIamReport.sh
+/bin/bash generateIamReport.sh
 mv *.tsv  ../clouddrive/
 ````
 
