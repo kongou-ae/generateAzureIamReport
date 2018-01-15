@@ -23,8 +23,8 @@ createRoleList () {
 
 }
 
-az role assignment list --all --query "[].{principalName:properties.principalName, roleDefinitionName:properties.roleDefinitionName, scope:properties.scope}" -o tsv > $(date '+%Y%m%d')_customRoles_tmp.tsv
-echo -e "principalName\troleDefinitionName\tscope" | cat - $(date '+%Y%m%d')_customRoles_tmp.tsv > $(date '+%Y%m%d')_customRoles.tsv
-rm $(date '+%Y%m%d')_customRoles_tmp.tsv
+az role assignment list --all --query "[].{principalName:properties.principalName, roleDefinitionName:properties.roleDefinitionName, scope:properties.scope}" -o tsv > $(date '+%Y%m%d')_customRoleAssignment_tmp.tsv
+echo -e "principalName\troleDefinitionName\tscope" | cat - $(date '+%Y%m%d')_customRoleAssignment_tmp.tsv > $(date '+%Y%m%d')_customRoleAssignment.tsv
+rm $(date '+%Y%m%d')_customRoleAssignment_tmp.tsv
 
-createRoleList > $(date '+%Y%m%d')_customRoleAssignment.tsv
+createRoleList > $(date '+%Y%m%d')_customRoles.tsv
